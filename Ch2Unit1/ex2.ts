@@ -1,4 +1,4 @@
-const allNumberRev = (n: number) : string => {
+const allNumberRev = (n: number): string => {
     let result = '';
     
     for (let i = n; i >= 0; i--) {
