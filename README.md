@@ -1,9 +1,9 @@
 ## Chapter 1 - Backend 
-  ### Unit 1: Introduction to ASP.Net and MVC and Hello world in ASP.Net (1 week)
+  ### Unit 1 - Introduction to ASP.Net and MVC and Hello world in ASP.Net
 
-  ### Unit 2: Controllers, services, and dependency injection with Postgres (2 weeks)
+  ### Unit 2 - Controllers, services, and dependency injection with Postgres
 
-  ### Unit 3: Middlewares, filters, and CQRS (2 weeks)
+  ### Unit 3 - Middlewares, filters, and CQRS
 
 
 ## Chapter 2 - Typescript
