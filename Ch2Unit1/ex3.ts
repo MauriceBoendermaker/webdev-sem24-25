@@ -1,7 +1,7 @@
 const allNumberRange = (lower: number, upper: number): string => {
     let result = '';
 
-    for (let i = upper; i >= lower; i--) {
+    for (let i = lower; i <= upper; i++) {
         result += i + ' ';
     }
     return result.trim();

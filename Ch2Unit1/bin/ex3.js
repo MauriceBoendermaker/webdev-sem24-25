@@ -1,7 +1,7 @@
 "use strict";
 const allNumberRange = (lower, upper) => {
     let result = '';
-    for (let i = upper; i >= lower; i--) {
+    for (let i = lower; i <= upper; i++) {
         result += i + ' ';
     }
     return result.trim();
