@@ -14,7 +14,7 @@
 
   ### Unit 3 - Polymorphism in Functional Programming
   
-  ### Unit 4 – Advanced Functions
+  ### Unit 4 - Advanced Functions
 
   ### Unit 5 - Advanced (hierarchical) data structures
 
