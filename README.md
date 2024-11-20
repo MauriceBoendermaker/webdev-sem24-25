@@ -1,20 +1,39 @@
-# Chapter 1 Unit 1 - Introduction to ASP.Net and MVC and Hello world in ASP.Net
-# Chapter 1 Unit 2 - Controllers, services, and dependency injection for storage
-# Chapter 1 Unit 3 - Middlewares, filters, and CQRS
+# List of topics by week
 
-# Chapter 2 Unit 0 - Introduction to TypeScript
-# Chapter 2 Unit 1 - Introduction to functional programming
-# Chapter 2 Unit 2 - Types in Functional Programming
-# Chapter 2 Unit 3 - Polymorphism in Functional Programming
-# Chapter 2 Unit 4 – Advanced Functions
-# Chapter 2 Unit 5 - Advanced (hierarchical) data structures
+## Chapter 1 - Backend 
+  ### Unit 1: Introduction to ASP.Net and MVC and Hello world in ASP.Net (1 week)
 
-# Chapter 3 Unit 0 - About React
-# Chapter 3 Unit 1A - Introduction to React
-# Chapter 3 Unit 1B - Props
-# Chapter 3 Unit 2 - Bootstrap
-# Chapter 3 Unit 3 - State
-# Chapter 3 Unit 4 - Controlled components
-# Chapter 3 Unit 5 - Asynchronous code (Promises)
-# Chapter 3 Unit 6 - Routing
-# Chapter 3 Unit 7 - Integrating React in a ASP.NET MVC application
+  ### Unit 2: Controllers, services, and dependency injection with Postgres (2 weeks)
+
+  ### Unit 3: Middlewares, filters, and CQRS (2 weeks)
+
+## Chapter 2 - Typescript
+
+  ### Unit 1 - Introduction to functional programming
+  
+  ### Unit 2 - Types in Functional Programming
+
+  ### Unit 3 - Polymorphism in Functional Programming
+  
+  ### Unit 4 – Advanced Functions
+
+  ### Unit 5 - Advanced (hierarchical) data structures
+
+  
+
+## Chapter 3 - React
+  ### Setup of React project and JSX
+  
+  ### Properties, drill-down, and re-render model
+
+  ### Bootstrap/CSS
+
+  ### State and hooks
+
+  ### Controlled components
+
+  ### Promises
+
+  ### Routing
+
+  ### Integration with backend
