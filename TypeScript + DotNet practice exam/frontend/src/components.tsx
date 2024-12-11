@@ -25,3 +25,43 @@ export function PersonCard(props: Person) {
         </>
     ) : null;
 }
+
+export const FormFields: React.FC<{ onChange: (value: string) => void }> = ({ onChange }) => {
+    const [username, setUsername] = useState('');
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setUsername(event.target.value);
+        onChange(event.target.value);
+    };
+
+    return (
+        <>
+            <label>
+                Text input: <input type="text" name="username" value={username} onChange={handleInputChange} />
+            </label>
+        </>
+    );
+};
+
+export const Form: React.FC<{ username: string, role }> = ({ username, role }) => {
+    const alertBox = () => {
+        alert(username);
+        alert(role);
+    };
+
+    return (
+        <>
+            <div>
+                <button onClick={alertBox}>Submit</button>
+            </div>
+            <div>
+                <select value={role}
+                        onChange={(e) => this.setState({ role: e.target.value as "student" | "teacher" | "staff" })} >
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="staff">Staff</option>
+                </select>
+            </div>
+        </>
+    );
+};
