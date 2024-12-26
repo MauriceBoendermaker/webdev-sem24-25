@@ -74,3 +74,7 @@ const myArray = ['apple', 'banana', 'orange']
 
 const myList = myArray.map((item) => <p>{item}</p>)
 root.render(myList)
+
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+const [car, , suv] = vehicles;

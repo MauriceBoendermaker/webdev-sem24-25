@@ -22,26 +22,79 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>React App</title>
+  <title>W3Schools - React App</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <br />
   <button id="btn">Click Me!</button>
   <button id="btn2">Click Me!</button>
+  <br />
   <p id="demo"></p>
   <p id="demo2"></p>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <br />
+  <script>
+    function calculate(a, b) {
+      const add = a + b;
+      const subtract = a - b;
+      const multiply = a * b;
+      const divide = a / b;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      return [add, subtract, multiply, divide];
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    const [add, subtract, multiply, divide] = calculate(4, 7);
+
+    document.write("<p>Sum: " + add + "</p>");
+    document.write("<p>Difference " + subtract + "</p>");
+    document.write("<p>Product: " + multiply + "</p>");
+    document.write("<p>Quotient " + divide + "</p>");
+  </script>
+  <br />
+  <p id="myVehicle"></p>
+  <script>
+    const vehicleOne = {
+      brand: 'Ford',
+      model: 'Mustang',
+      type: 'car',
+      year: 2021,
+      color: 'red'
+    }
+
+    myVehicle(vehicleOne);
+
+    function myVehicle({ brand, model, type, color }) {
+      const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+
+      document.getElementById("myVehicle").innerHTML = message;
+    }
+  </script>
+  <br />
+  <p id="myNestedVehicle"></p>
+  <script>
+    const vehicleTwo = {
+      brand: 'Ford',
+      model: 'Mustang',
+      type: 'car',
+      year: 2021,
+      color: "red",
+      registration: {
+        license_plate: 'abc-12-x',
+        date: '26/12/2024',
+        city: 'Rotterdam'
+      }
+    }
+
+    myNestedVehicle(vehicleTwo);
+
+    function myNestedVehicle({ color, type, year, registration: { license_plate, date, city } }) {
+      const message2 = 'The ' + color + ' ' + type + ' from ' + year + ',  with license plate: "' + license_plate + '", is registered on ' + date + ' in the city of ' + city + '.';
+
+      document.getElementById("myNestedVehicle").innerHTML += message2;
+    }
+  </script>
 </body>
 
 </html>
