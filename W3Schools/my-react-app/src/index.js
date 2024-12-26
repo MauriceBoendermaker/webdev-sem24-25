@@ -69,3 +69,8 @@ document.getElementById("btn2").addEventListener("click", myheader.changeColor2)
 var x = 5.6;
 let y = 5.6;
 const z = 5.6;
+
+const myArray = ['apple', 'banana', 'orange']
+
+const myList = myArray.map((item) => <p>{item}</p>)
+root.render(myList)
