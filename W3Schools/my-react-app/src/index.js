@@ -65,3 +65,7 @@ window.addEventListener("load", myheader.changeColor2);
 // A button object calls the function:
 document.getElementById("btn").addEventListener("click", myheader.changeColor);
 document.getElementById("btn2").addEventListener("click", myheader.changeColor2);
+
+var x = 5.6;
+let y = 5.6;
+const z = 5.6;
