@@ -112,7 +112,7 @@
     document.write('<p>' + two + '</p>');
     document.write('<p>' + rest + '</p>');
   </script>
-  <br/>
+  <br />
   <script>
     const myVehicleSpread = {
       brand: 'Ford',
@@ -126,9 +126,24 @@
       color: 'yellow'
     }
 
-    const myUpdatedVehicle = {...myVehicleSpread, ...updateMyVehicleSpread}
-    
+    const myUpdatedVehicle = { ...myVehicleSpread, ...updateMyVehicleSpread }
+
     console.log(myUpdatedVehicle);
+  </script>
+  <br />
+  <p id="myTernaryOperatorRoot"></p>
+  <script>
+    function renderApp() {
+      document.getElementById("myTernaryOperatorRoot").innerHTML = "Welcome!";
+    }
+
+    function renderLogin() {
+      document.getElementById("myTernaryOperatorRoot").innerHTML = "Please log in";
+    }
+
+    let authenticated = true;
+
+    authenticated ? renderApp() : renderLogin();
   </script>
 </body>
 
