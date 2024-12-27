@@ -23,6 +23,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>W3Schools - React App</title>
+
+  <style>
+    /* React JSX - Attribute class = className */
+    .myClass {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
@@ -141,10 +148,21 @@
       document.getElementById("myTernaryOperatorRoot").innerHTML = "Please log in";
     }
 
-    let authenticated = true;
+    let authenticated = true; // false
 
     authenticated ? renderApp() : renderLogin();
   </script>
+  <br />
+  <div id="rootJSX"></div>
+  <div id="rootNotJSX"></div>
+  <div id="rootJSXExpression"></div>
+  <div id="rootLargeHTMLElement"></div>
+  <div id="rootTopLevelElement"></div>
+  <div id="rootFragmentElement"></div>
+  <div id="rootClosedElement"></div>
+  <div id="rootClassAttribute"></div>
+  <div id="rootIfStatementElement"></div>
+  <div id="rootTernaryOperatorElement"></div>
 </body>
 
 </html>
