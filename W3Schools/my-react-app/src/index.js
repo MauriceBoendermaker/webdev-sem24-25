@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import CarClass from './CarClass';
+import CarComponentFile from './Car';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -37,7 +39,6 @@ class Model extends Car {
         return this.present() + ', it is a ' + this.model
     }
 }
-
 const mycar = new Model("Ford", "Mustang");
 root.render(mycar.show());
 
@@ -75,13 +76,11 @@ const z = 5.6;
 
 
 const myArray = ['apple', 'banana', 'orange']
-
 const myList = myArray.map((item) => <p>{item}</p>)
 root.render(myList)
 
 
 const vehicles = ['mustang', 'f-150', 'expedition'];
-
 const [car, , suv] = vehicles;
 
 
@@ -146,3 +145,41 @@ const xTernary = 11; // 1
 const myTernaryOperatorElement = <h1>{(xTernary) < 10 ? "Hello" : "Goodbye"}</h1>;
 const rootTernaryOperatorElement = ReactDOM.createRoot(document.getElementById('rootTernaryOperatorElement'));
 rootTernaryOperatorElement.render(myTernaryOperatorElement);
+
+
+const rootMyFirstClassComponent = ReactDOM.createRoot(document.getElementById('rootMyFirstClassComponent'));
+rootMyFirstClassComponent.render(<CarClass />)
+
+function CarFunction() {
+    return <h2>Hi, I am a car function component!</h2>;
+}
+const rootMyFirstFunctionComponent = ReactDOM.createRoot(document.getElementById('rootMyFirstFunctionComponent'));
+rootMyFirstFunctionComponent.render(<CarFunction />)
+
+const CarFunction2 = () => <h2>Hi, I am a one-liner car function component!</h2>;
+const rootMyFirstOneLineFunctionComponent = ReactDOM.createRoot(document.getElementById('rootMyFirstOneLineFunctionComponent'));
+rootMyFirstOneLineFunctionComponent.render(<CarFunction2 />);
+
+function CarProps(car_props) {
+    return <h2>I am a {car_props.color} Car!</h2>;
+}
+const rootCarProps = ReactDOM.createRoot(document.getElementById('rootCarProps'));
+rootCarProps.render(<CarProps color="red" />);
+
+function CarComponentsInComponents() {
+    return <h2>I am a Car!</h2>;
+}
+
+function GarageComponent() {
+    return (
+        <>
+        <h1>Who lives in my Garage?</h1>
+        <CarComponentsInComponents />
+        </>
+    );
+}
+const rootGarageComponents = ReactDOM.createRoot(document.getElementById('rootGarageComponents'));
+rootGarageComponents.render(<GarageComponent />);
+
+const rootCarComponentFile = ReactDOM.createRoot(document.getElementById('rootCarComponentFile'));
+rootCarComponentFile.render(<CarComponentFile />)
