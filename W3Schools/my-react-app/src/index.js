@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CarClass from './CarClass';
 import CarComponentFile from './Car';
+import { CarClass, CarClassProps, CarClassConstructorProps, CarClassGarageComponent, CarState, CarSetState } from './CarClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -147,9 +147,6 @@ const rootTernaryOperatorElement = ReactDOM.createRoot(document.getElementById('
 rootTernaryOperatorElement.render(myTernaryOperatorElement);
 
 
-const rootMyFirstClassComponent = ReactDOM.createRoot(document.getElementById('rootMyFirstClassComponent'));
-rootMyFirstClassComponent.render(<CarClass />)
-
 function CarFunction() {
     return <h2>Hi, I am a car function component!</h2>;
 }
@@ -173,13 +170,32 @@ function CarComponentsInComponents() {
 function GarageComponent() {
     return (
         <>
-        <h1>Who lives in my Garage?</h1>
-        <CarComponentsInComponents />
+            <h1>Who lives in my Garage?</h1>
+            <CarComponentsInComponents />
         </>
     );
 }
-const rootGarageComponents = ReactDOM.createRoot(document.getElementById('rootGarageComponents'));
-rootGarageComponents.render(<GarageComponent />);
+const rootGarageComponent = ReactDOM.createRoot(document.getElementById('rootGarageComponent'));
+rootGarageComponent.render(<GarageComponent />);
 
 const rootCarComponentFile = ReactDOM.createRoot(document.getElementById('rootCarComponentFile'));
 rootCarComponentFile.render(<CarComponentFile />)
+
+
+const rootMyFirstClassComponent = ReactDOM.createRoot(document.getElementById('rootMyFirstClassComponent'));
+rootMyFirstClassComponent.render(<CarClass />)
+
+const rootMyClassComponentWithProps = ReactDOM.createRoot(document.getElementById('rootMyClassComponentWithProps'));
+rootMyClassComponentWithProps.render(<CarClassProps color="red" />)
+
+const rootMyClassComponentWithConstructorProps = ReactDOM.createRoot(document.getElementById('rootMyClassComponentWithConstructorProps'));
+rootMyClassComponentWithConstructorProps.render(<CarClassConstructorProps model="Mustang" />);
+
+const rootCarClassGarageComponent = ReactDOM.createRoot(document.getElementById('rootCarClassGarageComponent'));
+rootCarClassGarageComponent.render(<CarClassGarageComponent />)
+
+const rootCarState = ReactDOM.createRoot(document.getElementById('rootCarState'));
+rootCarState.render(<CarState />)
+
+const rootCarSetState = ReactDOM.createRoot(document.getElementById('rootCarSetState'));
+rootCarSetState.render(<CarSetState />)
