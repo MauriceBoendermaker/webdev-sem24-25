@@ -295,3 +295,40 @@ function GoalTernaryOperator(props) {
 }
 const rootGoalTernaryOperator = ReactDOM.createRoot(document.getElementById('rootGoalTernaryOperator'));
 rootGoalTernaryOperator.render(<GoalTernaryOperator isGoal={true} />); // false
+
+
+function CarMapMethod(props) {
+    return <li>I am a {props.brand}</li>;
+}
+
+function GarageMapMethod() {
+    const cars = ['Ford', 'BMW', 'Audi'];
+    return (
+        <>
+            <h1>Who lives in my Map Garage?</h1>
+            <ul>
+                {cars.map((car) => <CarMapMethod brand={car} />)}
+            </ul>
+        </>
+    );
+}
+const rootGarageMapMethod = ReactDOM.createRoot(document.getElementById('rootGarageMapMethod'));
+rootGarageMapMethod.render(<GarageMapMethod />);
+
+function GarageKeys() {
+    const cars = [
+        { id: 1, brand: 'Ford' },
+        { id: 2, brand: 'BMW' },
+        { id: 3, brand: 'Audi' }
+    ];
+    return (
+        <>
+            <h1>Who lives in my Keys Garage?</h1>
+            <ul>
+                {cars.map((car) => <CarMapMethod key={car.id} brand={car.brand} />)}
+            </ul>
+        </>
+    );
+}
+const rootGarageKeys = ReactDOM.createRoot(document.getElementById('rootGarageKeys'));
+rootGarageKeys.render(<GarageKeys />)
