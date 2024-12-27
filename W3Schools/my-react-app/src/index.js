@@ -212,3 +212,41 @@ rootMyReactPropsGarageElementVariable.render(<MyReactPropsGarageElementVariable 
 
 const rootMyReactPropsGarageElementObject = ReactDOM.createRoot(document.getElementById('rootMyReactPropsGarageElementObject'));
 rootMyReactPropsGarageElementObject.render(<MyReactPropsGarageElementObject />)
+
+
+function FootballAddEvent() {
+    const shoot = () => {
+        alert("Great shot!");
+    }
+
+    return (
+        <button onClick={shoot}>Take the shot!</button>
+    );
+}
+const rootAddingEvents = ReactDOM.createRoot(document.getElementById('rootAddingEvents'));
+rootAddingEvents.render(<FootballAddEvent />);
+
+function FootballPassArgument() {
+    const shoot = (alertMessage) => {
+        alert(alertMessage);
+    }
+
+    return (
+        <button onClick={() => shoot("Goal!")}>Take the shot!</button>
+    );
+}
+const rootPassingArguments = ReactDOM.createRoot(document.getElementById('rootPassingArguments'));
+rootPassingArguments.render(<FootballPassArgument />)
+
+function FootballEventObject() {
+    const shoot = (a, b) => {
+        alert(b.type);
+        // b = React event that triggered this function, in this case the 'click' event
+    }
+
+    return (
+        <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+    );
+}
+const rootEventObjects = ReactDOM.createRoot(document.getElementById('rootEventObjects'));
+rootEventObjects.render(<FootballEventObject />);
