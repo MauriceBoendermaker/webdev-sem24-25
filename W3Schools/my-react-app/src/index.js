@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CarComponentFile from './Car';
+import { CarComponentFile, MyReactPropsCarElement, MyReactPropsGarageElement, MyReactPropsGarageElementVariable, MyReactPropsGarageElementObject } from './Car';
 import { CarClass, CarClassProps, CarClassConstructorProps, CarClassGarageComponent, CarState, CarSetState } from './CarClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -199,3 +199,16 @@ rootCarState.render(<CarState />)
 
 const rootCarSetState = ReactDOM.createRoot(document.getElementById('rootCarSetState'));
 rootCarSetState.render(<CarSetState />)
+
+
+const rootMyReactPropsCarElement = ReactDOM.createRoot(document.getElementById('rootMyReactPropsCarElement'));
+rootMyReactPropsCarElement.render(<MyReactPropsCarElement brand="Porsche" />);
+
+const rootMyReactPropsGarageElement = ReactDOM.createRoot(document.getElementById('rootMyReactPropsGarageElement'));
+rootMyReactPropsGarageElement.render(<MyReactPropsGarageElement />);
+
+const rootMyReactPropsGarageElementVariable = ReactDOM.createRoot(document.getElementById('rootMyReactPropsGarageElementVariable'));
+rootMyReactPropsGarageElementVariable.render(<MyReactPropsGarageElementVariable />)
+
+const rootMyReactPropsGarageElementObject = ReactDOM.createRoot(document.getElementById('rootMyReactPropsGarageElementObject'));
+rootMyReactPropsGarageElementObject.render(<MyReactPropsGarageElementObject />)
