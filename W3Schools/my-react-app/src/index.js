@@ -250,3 +250,48 @@ function FootballEventObject() {
 }
 const rootEventObjects = ReactDOM.createRoot(document.getElementById('rootEventObjects'));
 rootEventObjects.render(<FootballEventObject />);
+
+
+function MissedGoal() {
+    return <h1>MISSED!</h1>;
+}
+
+function MadeGoal() {
+    return <h1>Goal!</h1>;
+}
+
+function Goal(props) {
+    const isGoal = props.isGoal;
+    if (isGoal) return <MadeGoal />
+    return <MissedGoal />
+}
+const rootGoal = ReactDOM.createRoot(document.getElementById('rootGoal'));
+rootGoal.render(<Goal isGoal={false} />); // true
+
+function GarageLogicalAndOperator(props) {
+    const cars = props.cars;
+    return (
+        <>
+            <h1>Garage</h1>
+            {cars.length > 0 &&
+                <h2>
+                    You have {cars.length} cars in your garage.
+                </h2>
+            }
+        </>
+    );
+}
+const cars = ['Ford', 'BMW', 'Audi']
+const rootGarageLogicalAndOperator = ReactDOM.createRoot(document.getElementById('rootGarageLogicalAndOperator'));
+rootGarageLogicalAndOperator.render(<GarageLogicalAndOperator cars={cars} />)
+
+function GoalTernaryOperator(props) {
+    const isGoal = props.isGoal;
+    return (
+        <>
+            {isGoal ? <MadeGoal /> : <MissedGoal />}
+        </>
+    );
+}
+const rootGoalTernaryOperator = ReactDOM.createRoot(document.getElementById('rootGoalTernaryOperator'));
+rootGoalTernaryOperator.render(<GoalTernaryOperator isGoal={true} />); // false
