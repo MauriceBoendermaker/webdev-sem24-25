@@ -1,8 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { CarComponentFile, MyReactPropsCarElement, MyReactPropsGarageElement, MyReactPropsGarageElementVariable, MyReactPropsGarageElementObject } from './Car';
 import { CarClass, CarClassProps, CarClassConstructorProps, CarClassGarageComponent, CarState, CarSetState } from './CarClass';
+
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -467,3 +476,21 @@ function MySelectForm() {
 }
 const rootMySubmitForm = ReactDOM.createRoot(document.getElementById('rootMySubmitForm'));
 rootMySubmitForm.render(<MySelectForm />)
+
+
+export default function RouterApp() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="blogs" element={<Blogs />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<NoPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
+}
+const rootMyRouterApp = ReactDOM.createRoot(document.getElementById('rootMyRouterApp'));
+rootMyRouterApp.render(<RouterApp />);
