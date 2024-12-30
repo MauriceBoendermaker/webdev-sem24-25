@@ -547,7 +547,59 @@ function FavoriteColor() {
                 Green
             </button>
         </>
-    )
+    );
 }
 const rootMyHookExample = ReactDOM.createRoot(document.getElementById('rootMyHookExample'));
 rootMyHookExample.render(<FavoriteColor />)
+
+
+function MyMultipleStates() {
+    const [car, setCar] = useState({
+        brand: "Ford",
+        model: "Mustang",
+        year: "1964",
+        color: "red"
+    });
+
+    return (
+        <>
+            <h1>My {car.brand}</h1>
+            <p>
+                It is a {car.color} {car.model} from {car.year}.
+            </p>
+        </>
+    );
+}
+const rootMyMultipleStates = ReactDOM.createRoot(document.getElementById('rootMyMultipleStates'));
+rootMyMultipleStates.render(<MyMultipleStates />);
+
+function UpdateObjectsAndArraysStates() {
+    const [car, setCar] = useState({
+        brand: "Ford",
+        model: "Mustang",
+        year: "1964",
+        color: "red"
+    });
+
+    const updateColor = () => {
+        setCar(previousState => {
+            return { ...previousState, color: "blue" }
+        });
+    }
+
+    return (
+        <>
+            <h1>My {car.brand}</h1>
+            <p>
+                It is a {car.color} {car.model} from {car.year}.
+            </p>
+            <button
+                type="button"
+                onClick={updateColor}>
+                Blue
+            </button>
+        </>
+    )
+}
+const rootUpdateObjectsAndArraysStates = ReactDOM.createRoot(document.getElementById('rootUpdateObjectsAndArraysStates'));
+rootUpdateObjectsAndArraysStates.render(<UpdateObjectsAndArraysStates />);
