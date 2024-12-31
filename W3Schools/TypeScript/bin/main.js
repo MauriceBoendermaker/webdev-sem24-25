@@ -203,4 +203,19 @@ var Functions;
     const negateFunction = (value) => value * -1;
     console.log(negateFunction(11));
 })(Functions || (Functions = {}));
+var Casting;
+(function (Casting) {
+    // Casting with as
+    let x = "hello";
+    console.log(x.length);
+    let y = 4;
+    console.log(y.length); // undefined
+    // console.log((5 as string).length); // error
+    // Casting with <>
+    let z = "abcdef";
+    console.log(z.length);
+    // Force casting
+    let x2 = "hello";
+    // console.log(((x2 as unknown) as number).length); // error
+})(Casting || (Casting = {}));
 //# sourceMappingURL=main.js.map

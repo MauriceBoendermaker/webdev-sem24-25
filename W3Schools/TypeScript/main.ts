@@ -261,3 +261,22 @@ namespace Functions {
     const negateFunction: Negate = (value) => value * -1;
     console.log(negateFunction(11));
 }
+
+namespace Casting {
+    // Casting with as
+    let x: unknown = "hello";
+    console.log((x as string).length);
+
+    let y: unknown = 4;
+    console.log((y as string).length); // undefined
+
+    // console.log((5 as string).length); // error
+
+    // Casting with <>
+    let z: unknown = "abcdef";
+    console.log((<string>z).length);
+
+    // Force casting
+    let x2 = "hello";
+    // console.log(((x2 as unknown) as number).length); // error
+}
