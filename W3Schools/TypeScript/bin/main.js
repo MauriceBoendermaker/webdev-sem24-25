@@ -46,4 +46,17 @@ var Arrays;
     let head = numbers[0];
     console.log(head);
 })(Arrays || (Arrays = {}));
+var Tuples;
+(function (Tuples) {
+    let ourTuple;
+    ourTuple = [5, false, 'TypeScript is great!'];
+    console.log(ourTuple);
+    let ourReadonlyTuple;
+    ourReadonlyTuple = [5, false, 'TypeScript is amazing!'];
+    // ourReadonlyTuple.push('Something else here'); // error
+    console.log(ourReadonlyTuple);
+    const graph = [55.2, 41.3];
+    const [x, y] = graph;
+    console.log(graph);
+})(Tuples || (Tuples = {}));
 //# sourceMappingURL=main.js.map

@@ -59,3 +59,20 @@ namespace Arrays {
     let head: number = numbers[0];
     console.log(head);
 }
+
+namespace Tuples {
+    let ourTuple: [number, boolean, string];
+    ourTuple = [5, false, 'TypeScript is great!'];
+    console.log(ourTuple);
+
+
+    let ourReadonlyTuple: readonly [number, boolean, string];
+    ourReadonlyTuple = [5, false, 'TypeScript is amazing!'];
+    // ourReadonlyTuple.push('Something else here'); // error
+    console.log(ourReadonlyTuple);
+
+
+    const graph: [x: number, y: number] = [55.2, 41.3];
+    const [x, y] = graph;
+    console.log(graph);
+}
