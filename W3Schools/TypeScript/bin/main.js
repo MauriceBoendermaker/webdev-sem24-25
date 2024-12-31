@@ -161,4 +161,46 @@ var UnionTypes;
         ;
     }
 })(UnionTypes || (UnionTypes = {}));
+var Functions;
+(function (Functions) {
+    // Return Type
+    function getTime() {
+        return new Date().getTime();
+    }
+    console.log(getTime());
+    // Void Return Type
+    function printHello() {
+        console.log("Hello!");
+    }
+    printHello();
+    // Parameters
+    function multiply(a, b) {
+        return a * b;
+    }
+    console.log(multiply(3, 2));
+    // Optional Parameters
+    function add(a, b, c) {
+        return a + b + (c || 0);
+    }
+    console.log(add(100, 10, 1));
+    console.log(add(5, 10));
+    // Default Parameters
+    function pow(value, exponent = 10) {
+        return value ** exponent;
+    }
+    console.log(pow(5, 2));
+    console.log(pow(2));
+    // Named Parameters
+    function divide({ dividend, divisor }) {
+        return dividend / divisor;
+    }
+    console.log(divide({ dividend: 10, divisor: 2 }));
+    // Rest Parameters
+    function addRest(a, b, ...rest) {
+        return a + b + rest.reduce((p, c) => p + c, 0);
+    }
+    console.log(addRest(10, 10, 2, 2, 3));
+    const negateFunction = (value) => value * -1;
+    console.log(negateFunction(11));
+})(Functions || (Functions = {}));
 //# sourceMappingURL=main.js.map
