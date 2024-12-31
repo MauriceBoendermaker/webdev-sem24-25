@@ -149,4 +149,16 @@ var TypeAliases_and_Interfaces;
     };
     console.log(coloredRectangle);
 })(TypeAliases_and_Interfaces || (TypeAliases_and_Interfaces = {}));
+var UnionTypes;
+(function (UnionTypes) {
+    function printStatusCode(code) {
+        console.log(`My status code is ${code}.`);
+    }
+    printStatusCode(404);
+    printStatusCode('200');
+    function printStatusCodeError(code) {
+        // console.log(`My status code is ${code.toUpperCase()}.`); // error
+        ;
+    }
+})(UnionTypes || (UnionTypes = {}));
 //# sourceMappingURL=main.js.map

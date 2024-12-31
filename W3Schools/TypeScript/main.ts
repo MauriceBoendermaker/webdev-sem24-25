@@ -196,3 +196,17 @@ namespace TypeAliases_and_Interfaces {
     };
     console.log(coloredRectangle);
 }
+
+namespace UnionTypes {
+    function printStatusCode(code: string | number) {
+        console.log(`My status code is ${code}.`)
+    }
+    printStatusCode(404);
+    printStatusCode('200');
+
+
+    function printStatusCodeError(code: string | number) {
+        // console.log(`My status code is ${code.toUpperCase()}.`); // error
+        ;
+    }
+}
