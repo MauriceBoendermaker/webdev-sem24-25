@@ -79,4 +79,51 @@ var ObjectTypes;
     // nameAgeMap.Mark = "Fifty"; // error
     console.log(nameAgeMap);
 })(ObjectTypes || (ObjectTypes = {}));
+var Enums;
+(function (Enums) {
+    let CardinalDirections_Default;
+    (function (CardinalDirections_Default) {
+        CardinalDirections_Default[CardinalDirections_Default["North"] = 0] = "North";
+        CardinalDirections_Default[CardinalDirections_Default["East"] = 1] = "East";
+        CardinalDirections_Default[CardinalDirections_Default["South"] = 2] = "South";
+        CardinalDirections_Default[CardinalDirections_Default["West"] = 3] = "West";
+    })(CardinalDirections_Default || (CardinalDirections_Default = {}));
+    let currentDirection = CardinalDirections_Default.North;
+    // logs 0
+    console.log(currentDirection);
+    // currentDirection = 'North'; // error
+    let CardinalDirections_Initialized;
+    (function (CardinalDirections_Initialized) {
+        CardinalDirections_Initialized[CardinalDirections_Initialized["North"] = 1] = "North";
+        CardinalDirections_Initialized[CardinalDirections_Initialized["East"] = 2] = "East";
+        CardinalDirections_Initialized[CardinalDirections_Initialized["South"] = 3] = "South";
+        CardinalDirections_Initialized[CardinalDirections_Initialized["West"] = 4] = "West";
+    })(CardinalDirections_Initialized || (CardinalDirections_Initialized = {}));
+    // logs 1
+    console.log(CardinalDirections_Initialized.North);
+    // logs 4
+    console.log(CardinalDirections_Initialized.West);
+    let StatusCodes_FullyInitialized;
+    (function (StatusCodes_FullyInitialized) {
+        StatusCodes_FullyInitialized[StatusCodes_FullyInitialized["NotFound"] = 404] = "NotFound";
+        StatusCodes_FullyInitialized[StatusCodes_FullyInitialized["Success"] = 200] = "Success";
+        StatusCodes_FullyInitialized[StatusCodes_FullyInitialized["Accepted"] = 202] = "Accepted";
+        StatusCodes_FullyInitialized[StatusCodes_FullyInitialized["BadRequest"] = 400] = "BadRequest";
+    })(StatusCodes_FullyInitialized || (StatusCodes_FullyInitialized = {}));
+    // logs 404
+    console.log(StatusCodes_FullyInitialized.NotFound);
+    // logs 200
+    console.log(StatusCodes_FullyInitialized.Success);
+    let CardinalDirections_String;
+    (function (CardinalDirections_String) {
+        CardinalDirections_String["North"] = "North";
+        CardinalDirections_String["East"] = "East";
+        CardinalDirections_String["South"] = "South";
+        CardinalDirections_String["West"] = "West";
+    })(CardinalDirections_String || (CardinalDirections_String = {}));
+    // logs "North"
+    console.log(CardinalDirections_String.North);
+    // logs "West"
+    console.log(CardinalDirections_String.West);
+})(Enums || (Enums = {}));
 //# sourceMappingURL=main.js.map

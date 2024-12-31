@@ -102,3 +102,52 @@ namespace ObjectTypes {
     // nameAgeMap.Mark = "Fifty"; // error
     console.log(nameAgeMap);
 }
+
+namespace Enums {
+    enum CardinalDirections_Default {
+        North,
+        East,
+        South,
+        West
+    }
+    let currentDirection = CardinalDirections_Default.North;
+    // logs 0
+    console.log(currentDirection);
+    // currentDirection = 'North'; // error
+
+
+    enum CardinalDirections_Initialized {
+        North = 1,
+        East,
+        South,
+        West
+    }
+    // logs 1
+    console.log(CardinalDirections_Initialized.North);
+    // logs 4
+    console.log(CardinalDirections_Initialized.West);
+
+
+    enum StatusCodes_FullyInitialized {
+        NotFound = 404,
+        Success = 200,
+        Accepted = 202,
+        BadRequest = 400
+    }
+    // logs 404
+    console.log(StatusCodes_FullyInitialized.NotFound);
+    // logs 200
+    console.log(StatusCodes_FullyInitialized.Success);
+
+
+    enum CardinalDirections_String {
+        North = "North",
+        East = "East",
+        South = "South",
+        West = "West"
+    }
+    // logs "North"
+    console.log(CardinalDirections_String.North);
+    // logs "West"
+    console.log(CardinalDirections_String.West);
+}
