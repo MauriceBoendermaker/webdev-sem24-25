@@ -59,4 +59,24 @@ var Tuples;
     const [x, y] = graph;
     console.log(graph);
 })(Tuples || (Tuples = {}));
+var ObjectTypes;
+(function (ObjectTypes) {
+    const car = {
+        type: "Toyota",
+        model: "Corolla",
+        year: 2009
+    };
+    console.log(car);
+    car.type = "Ford"; // no error
+    // car.type = 2; // error
+    const carOptionalProperty = {
+        type: "Toyota"
+    };
+    carOptionalProperty.milage = 2000;
+    console.log(carOptionalProperty);
+    const nameAgeMap = {};
+    nameAgeMap.Jack = 25; // no error
+    // nameAgeMap.Mark = "Fifty"; // error
+    console.log(nameAgeMap);
+})(ObjectTypes || (ObjectTypes = {}));
 //# sourceMappingURL=main.js.map

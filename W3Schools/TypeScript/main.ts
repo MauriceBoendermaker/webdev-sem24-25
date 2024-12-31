@@ -76,3 +76,29 @@ namespace Tuples {
     const [x, y] = graph;
     console.log(graph);
 }
+
+namespace ObjectTypes {
+    const car: { type: string, model: string, year: number } = {
+        type: "Toyota",
+        model: "Corolla",
+        year: 2009
+    };
+    console.log(car);
+
+
+    car.type = "Ford"; // no error
+    // car.type = 2; // error
+
+
+    const carOptionalProperty: { type: string, milage?: number } = {
+        type: "Toyota"
+    };
+    carOptionalProperty.milage = 2000;
+    console.log(carOptionalProperty);
+
+
+    const nameAgeMap: { [index: string]: number } = {};
+    nameAgeMap.Jack = 25; // no error
+    // nameAgeMap.Mark = "Fifty"; // error
+    console.log(nameAgeMap);
+}
