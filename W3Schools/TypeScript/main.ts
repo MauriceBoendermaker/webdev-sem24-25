@@ -40,3 +40,22 @@ namespace SpecialTypes {
     let y: undefined = undefined;
     let z: null = null;
 }
+
+namespace Arrays {
+    const names: string[] = [];
+    names.push("Dylan"); // no error
+    // names.push(3); // error
+
+
+    const namesReadonly: readonly string[] = ["Dylan"];
+    // namesReadonly.push("Jack"); // error
+    console.log(namesReadonly);
+
+
+    const numbers = [1, 2, 3];
+    numbers.push(4); // no error
+    console.log(numbers);
+    // numbers.push("2"); // error
+    let head: number = numbers[0];
+    console.log(head);
+}

@@ -31,4 +31,19 @@ var SpecialTypes;
     let y = undefined;
     let z = null;
 })(SpecialTypes || (SpecialTypes = {}));
+var Arrays;
+(function (Arrays) {
+    const names = [];
+    names.push("Dylan"); // no error
+    // names.push(3); // error
+    const namesReadonly = ["Dylan"];
+    // namesReadonly.push("Jack"); // error
+    console.log(namesReadonly);
+    const numbers = [1, 2, 3];
+    numbers.push(4); // no error
+    console.log(numbers);
+    // numbers.push("2"); // error
+    let head = numbers[0];
+    console.log(head);
+})(Arrays || (Arrays = {}));
 //# sourceMappingURL=main.js.map
