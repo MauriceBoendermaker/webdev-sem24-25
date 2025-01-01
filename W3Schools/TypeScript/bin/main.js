@@ -218,4 +218,86 @@ var Casting;
     let x2 = "hello";
     // console.log(((x2 as unknown) as number).length); // error
 })(Casting || (Casting = {}));
+var Classes;
+(function (Classes) {
+    // Members: Types
+    class PersonTypes {
+        constructor() {
+            this.name = "";
+        }
+    }
+    const personTypes = new PersonTypes();
+    personTypes.name = "Jane";
+    console.log(personTypes);
+    // Members: Visibility
+    class PersonVisibility {
+        constructor(name) {
+            this.name = name;
+        }
+        getName() {
+            return this.name;
+        }
+    }
+    const personVisibility = new PersonVisibility("Jane");
+    console.log(personVisibility.getName());
+    // Parameter Properties
+    class PersonProperties {
+        constructor(name) {
+            this.name = name;
+        }
+        getName() {
+            return this.name;
+        }
+    }
+    const personProperties = new PersonProperties("Jane");
+    console.log(personProperties.getName());
+    // Readonly
+    class PersonReadonly {
+        constructor(name) {
+            this.name = name;
+        }
+        getName() {
+            return this.name;
+        }
+    }
+    const personReadonly = new PersonReadonly("Jane");
+    console.log(personReadonly.getName());
+    // Abstract Classes
+    class Polygon {
+        toString() {
+            return `Polygon[area=${this.getArea()}]`;
+        }
+    }
+    class Rectangle extends Polygon {
+        constructor(width, height) {
+            super(); // part of abstract class Polygon
+            this.width = width;
+            this.height = height;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+        // Override
+        toString() {
+            return `Rectangle[width=${this.width}, height=${this.height}]`;
+        }
+    }
+    const myRectangle = new Rectangle(10, 20);
+    console.log(myRectangle.getArea());
+    // Inheritance: Extends
+    class Square extends Rectangle {
+        constructor(width) {
+            super(width, width);
+        }
+        // Override
+        toString() {
+            return `Square[width=${this.width}]`;
+        }
+    }
+    const mySquare = new Square(20);
+    console.log(mySquare.getArea());
+    // Override
+    console.log(myRectangle.toString());
+    console.log(mySquare.toString());
+})(Classes || (Classes = {}));
 //# sourceMappingURL=main.js.map

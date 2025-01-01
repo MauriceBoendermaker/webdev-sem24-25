@@ -280,3 +280,103 @@ namespace Casting {
     let x2 = "hello";
     // console.log(((x2 as unknown) as number).length); // error
 }
+
+namespace Classes {
+    // Members: Types
+    class PersonTypes {
+        name: string = "";
+    }
+    const personTypes = new PersonTypes();
+    personTypes.name = "Jane";
+    console.log(personTypes);
+
+    // Members: Visibility
+    class PersonVisibility {
+        private name: string;
+
+        public constructor(name: string) {
+            this.name = name;
+        }
+
+        public getName(): string {
+            return this.name;
+        }
+    }
+    const personVisibility = new PersonVisibility("Jane");
+    console.log(personVisibility.getName());
+
+    // Parameter Properties
+    class PersonProperties {
+        public constructor(private name: string) { }
+
+        public getName(): string {
+            return this.name;
+        }
+    }
+    const personProperties = new PersonProperties("Jane");
+    console.log(personProperties.getName());
+
+    // Readonly
+    class PersonReadonly {
+        private readonly name: string;
+
+        public constructor(name: string) {
+            this.name = name;
+        }
+
+        public getName(): string {
+            return this.name;
+        }
+    }
+    const personReadonly = new PersonReadonly("Jane");
+    console.log(personReadonly.getName());
+
+    // Abstract Classes
+    abstract class Polygon {
+        public abstract getArea(): number;
+
+        public toString(): string {
+            return `Polygon[area=${this.getArea()}]`;
+        }
+    }
+
+    // Inheritance: Implements
+    interface Shape {
+        getArea: () => number;
+    }
+
+    class Rectangle extends Polygon implements Shape {
+        public constructor(protected readonly width: number, protected readonly height: number) {
+            super(); // part of abstract class Polygon
+        }
+
+        public getArea(): number {
+            return this.width * this.height;
+        }
+
+        // Override
+        public toString(): string {
+            return `Rectangle[width=${this.width}, height=${this.height}]`;
+        }
+    }
+    const myRectangle = new Rectangle(10, 20);
+    console.log(myRectangle.getArea());
+
+    // Inheritance: Extends
+    class Square extends Rectangle {
+        public constructor(width: number) {
+            super(width, width);
+        }
+
+        // Override
+        public override toString(): string {
+            return `Square[width=${this.width}]`;
+        }
+    }
+    const mySquare = new Square(20);
+    console.log(mySquare.getArea());
+
+    // Override
+    console.log(myRectangle.toString());
+    console.log(mySquare.toString());
+}
