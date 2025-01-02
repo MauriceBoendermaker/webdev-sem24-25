@@ -400,4 +400,19 @@ var UtilityTypes;
     // personReadonly.name = 'Bob'; // error
     console.log(personReadonly.name, personReadonly.age);
 })(UtilityTypes || (UtilityTypes = {}));
+var Keyof;
+(function (Keyof) {
+    function printPersonProperty(person, property) {
+        console.log(`Printing person property ${property}: "${person[property]}"`);
+    }
+    let person = {
+        name: "Max",
+        age: 27
+    };
+    printPersonProperty(person, "name");
+    function createStringPair(property, value) {
+        return { [property]: value };
+    }
+    console.log(createStringPair("Name", "Bob"));
+})(Keyof || (Keyof = {}));
 //# sourceMappingURL=main.js.map
