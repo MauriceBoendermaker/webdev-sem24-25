@@ -355,4 +355,49 @@ var BasicGenerics;
     }
     console.log(createLoggedPair(4, 5));
 })(BasicGenerics || (BasicGenerics = {}));
+var UtilityTypes;
+(function (UtilityTypes) {
+    let pointPart = {};
+    pointPart.x = 10;
+    console.log(pointPart);
+    let myCar = {
+        make: "Ford",
+        model: "Focus",
+        milage: 12000
+    };
+    console.log(myCar);
+    // Record
+    const nameAgeMap = {
+        'Alice': 21,
+        'Bob': 25
+    };
+    console.log(nameAgeMap);
+    const bobOmit = {
+        name: 'Bob'
+    };
+    console.log(bobOmit);
+    const bobPick = {
+        name: 'Bob',
+        location: 'Rotterdam'
+    };
+    console.log(bobPick);
+    const valueExclude = true;
+    console.log(valueExclude);
+    const pointGenerator = {
+        x: 10,
+        y: 20
+    };
+    console.log(pointGenerator);
+    const pointPrinter = {
+        x: 20,
+        y: 40,
+    };
+    console.log(pointPrinter);
+    const personReadonly = {
+        name: "Dylan",
+        age: 35
+    };
+    // personReadonly.name = 'Bob'; // error
+    console.log(personReadonly.name, personReadonly.age);
+})(UtilityTypes || (UtilityTypes = {}));
 //# sourceMappingURL=main.js.map

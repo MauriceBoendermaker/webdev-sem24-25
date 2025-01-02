@@ -448,3 +448,93 @@ namespace BasicGenerics {
     }
     console.log(createLoggedPair(4, 5));
 }
+
+namespace UtilityTypes {
+    // Partial
+    interface Point {
+        x: number,
+        y: number
+    }
+    let pointPart: Partial<Point> = {};
+    pointPart.x = 10;
+    console.log(pointPart);
+
+    // Required
+    interface Car {
+        make: string;
+        model: string;
+        milage?: number;
+    }
+
+    let myCar: Required<Car> = {
+        make: "Ford",
+        model: "Focus",
+        milage: 12000
+    };
+    console.log(myCar);
+
+    // Record
+    const nameAgeMap: Record<string, number> = {
+        'Alice': 21,
+        'Bob': 25
+    };
+    console.log(nameAgeMap);
+
+    // Omit
+    interface PersonOmit {
+        name: string;
+        age: number;
+        location?: string;
+    }
+
+    const bobOmit: Omit<PersonOmit, 'age' | 'location'> = {
+        name: 'Bob'
+    };
+    console.log(bobOmit);
+
+    // Pick
+    interface PersonPick {
+        name: string;
+        age: number;
+        location?: string;
+    }
+
+    const bobPick: Pick<PersonPick, 'name' | 'location'> = {
+        name: 'Bob',
+        location: 'Rotterdam'
+    };
+    console.log(bobPick);
+
+    // Exclude
+    type Primitive = string | number | boolean;
+    const valueExclude: Exclude<Primitive, string> = true;
+    console.log(valueExclude);
+
+    // ReturnType
+    type PointGenerator = () => { x: number; y: number; };
+    const pointGenerator: ReturnType<PointGenerator> = {
+        x: 10,
+        y: 20
+    };
+    console.log(pointGenerator);
+
+    // Parameters
+    type PointPrinter = (p: { x: number; y: number; }) => void;
+    const pointPrinter: Parameters<PointPrinter>[0] = {
+        x: 20,
+        y: 40,
+    };
+    console.log(pointPrinter);
+
+    // Readonly
+    interface PersonReadonly {
+        name: string;
+        age: number
+    }
+    const personReadonly: Readonly<PersonReadonly> = {
+        name: "Dylan",
+        age: 35
+    };
+    // personReadonly.name = 'Bob'; // error
+    console.log(personReadonly.name, personReadonly.age)
+}
