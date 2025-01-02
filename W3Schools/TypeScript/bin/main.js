@@ -300,4 +300,59 @@ var Classes;
     console.log(myRectangle.toString());
     console.log(mySquare.toString());
 })(Classes || (Classes = {}));
+var BasicGenerics;
+(function (BasicGenerics) {
+    // Functions
+    function createPair(v1, v2) {
+        return [v1, v2];
+    }
+    console.log(createPair('Hello', 42));
+    // Classes
+    class NamedValue {
+        constructor(name) {
+            this.name = name;
+        }
+        setValue(value) {
+            this._value = value;
+        }
+        getValue() {
+            return this._value;
+        }
+        toString() {
+            return `${this.name}: ${this._value}`;
+        }
+    }
+    let value = new NamedValue('myNumber');
+    value.setValue(10);
+    console.log(value.toString());
+    const wrappedValue = { value: 10 };
+    console.log(wrappedValue);
+    ;
+    const wrappedInterface = { value: 20 };
+    console.log(wrappedInterface);
+    // Default Value
+    class NamedDefaultValue {
+        constructor(name) {
+            this.name = name;
+        }
+        setValue(value) {
+            this._value = value;
+        }
+        getValue() {
+            return this._value;
+        }
+        toString() {
+            return `${this.name}: ${this._value}`;
+        }
+    }
+    let defaultValue = new NamedDefaultValue('myNumber');
+    defaultValue.setValue('myValue');
+    console.log(defaultValue.toString());
+    // Extends
+    function createLoggedPair(v1, v2) {
+        console.log(`creating pair: v1='${v1}', '${v2}'`);
+        return [v1, v2];
+    }
+    console.log(createLoggedPair(4, 5));
+})(BasicGenerics || (BasicGenerics = {}));
 //# sourceMappingURL=main.js.map
