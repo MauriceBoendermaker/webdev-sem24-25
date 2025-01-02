@@ -415,4 +415,48 @@ var Keyof;
     }
     console.log(createStringPair("Name", "Bob"));
 })(Keyof || (Keyof = {}));
+var Null;
+(function (Null) {
+    // Types
+    let value = null;
+    console.log(typeof value);
+    value = "Hello";
+    console.log(typeof value);
+    value = undefined;
+    console.log(typeof value);
+    function printYardSize(house) {
+        const yardSize = house.yard?.sqft;
+        if (yardSize === undefined) {
+            console.log('No yard');
+        }
+        else {
+            console.log(`Yard is ${yardSize} sqft`);
+        }
+    }
+    let home = {
+        sqft: 500,
+        yard: {
+            sqft: 400
+        }
+    };
+    printYardSize(home);
+    // Nullish Coalescence
+    function printMilage(milage) {
+        console.log(`Milage: ${milage ?? 'Not Available'}`);
+    }
+    printMilage(null);
+    printMilage(undefined);
+    printMilage(0);
+    // Null Assertion
+    function getValueNullAssert() {
+        return 'Hello';
+    }
+    let valueNullAssert = getValueNullAssert();
+    console.log('value length: ' + valueNullAssert.length);
+    // Array bounds handling
+    let arrayNumbers = [1, 2, 3];
+    let arrayValue = arrayNumbers[0];
+    console.log(arrayValue); // with `noUncheckedIndexedAccess` this has the type `number | undefined`
+    console.log(typeof arrayValue);
+})(Null || (Null = {}));
 //# sourceMappingURL=main.js.map

@@ -562,3 +562,62 @@ namespace Keyof {
     }
     console.log(createStringPair("Name", "Bob"));
 }
+
+namespace Null {
+    // Types
+    let value: string | undefined | null = null;
+    console.log(typeof value);
+
+    value = "Hello";
+    console.log(typeof value);
+
+    value = undefined;
+    console.log(typeof value);
+
+    // Optional Chaining
+    interface House {
+        sqft: number;
+        yard?: {
+            sqft: number;
+        };
+    }
+
+    function printYardSize(house: House) {
+        const yardSize = house.yard?.sqft;
+
+        if (yardSize === undefined) {
+            console.log('No yard');
+        } else {
+            console.log(`Yard is ${yardSize} sqft`);
+        }
+    }
+
+    let home: House = {
+        sqft: 500,
+        yard: {
+            sqft: 400
+        }
+    };
+    printYardSize(home);
+
+    // Nullish Coalescence
+    function printMilage(milage: number | null | undefined) {
+        console.log(`Milage: ${milage ?? 'Not Available'}`);
+    }
+    printMilage(null);
+    printMilage(undefined);
+    printMilage(0);
+
+    // Null Assertion
+    function getValueNullAssert(): string | undefined {
+        return 'Hello';
+    }
+    let valueNullAssert = getValueNullAssert();
+    console.log('value length: ' + valueNullAssert!.length);
+
+    // Array bounds handling
+    let arrayNumbers: number[] = [1, 2, 3];
+    let arrayValue = arrayNumbers[0];
+    console.log(arrayValue); // with `noUncheckedIndexedAccess` this has the type `number | undefined`
+    console.log(typeof arrayValue);
+}
