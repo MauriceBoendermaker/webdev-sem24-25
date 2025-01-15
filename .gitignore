@@ -1,13 +1,15 @@
-# From .NET Core 3.0 you can use the command: `dotnet new gitignore` to generate a customizable .gitignore file
+# Ignore bin and obj folders in all subdirectories
+**/bin/
+**/obj/
 
+# Optional: Exclude common unnecessary files
 *.swp
 *.*~
-project.lock.json
 .DS_Store
 *.pyc
 
 # Visual Studio Code
-.vscode
+.vscode/
 
 # User-specific files
 *.suo
@@ -16,16 +18,6 @@ project.lock.json
 *.sln.docstates
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
 msbuild.log
 msbuild.err
 msbuild.wrn
