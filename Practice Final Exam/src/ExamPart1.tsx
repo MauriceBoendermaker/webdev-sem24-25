@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 export type Person = Student | Teacher | Staff;
 
@@ -26,7 +26,15 @@ type Staff = {
 
 // Question 1
 
-export const PersonCard = (props: {}): JSX.Element => (<></>)
+export const PersonCard = (props: Person): JSX.Element => (
+  <>
+    <div>
+      {props.role == "student" ? "🎓 " : props.role == "teacher" ? "🏫 " : props.role == "staff" ? "🏢 " : ""}
+      {props.name}&nbsp;|&nbsp;
+      {props.role == "student" ? props.grade : props.role == "teacher" ? props.subject : props.role == "staff" ? props.department : ""}
+    </div>
+  </>
+)
 
 
 
