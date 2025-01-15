@@ -1,6 +1,6 @@
 # Ignore bin and obj folders in all subdirectories
-**/bin/
-**/obj/
+**/bin/*
+**/obj/*
 
 # Optional: Exclude common unnecessary files
 *.swp
