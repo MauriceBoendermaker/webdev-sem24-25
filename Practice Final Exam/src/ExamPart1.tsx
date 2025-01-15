@@ -145,9 +145,36 @@ Hint for the Dropdown list
 
 // Question 3
 
-export const fetchPersons = async (): Promise<{}> => {
-  return {}
+// type Option<T> = { kind: "Some"; value: T } | { kind: "None"; error: string };
+
+type Some<T> = {
+  kind: "Some";
+  value: T;
 }
+
+type None = {
+  kind: "None";
+  error: string;
+}
+
+type Option<T> = Some<T> | None
+
+export const fetchPersons = async (): Promise<Option<Person[]>> => {
+  const role: string = "student";
+  
+  const optionalRole: string = role ? `?role=${role}` : "";
+
+  const response = await fetch(`http://localhost:5000/api/persons${optionalRole}`);
+  const responseContent = (await response.json());
+
+  if (response.ok) {
+    return { kind: "Some", value: responseContent as Person[] };
+  }
+
+  return { kind: "None", error: responseContent.error };
+}
+
+console.log(fetchPersons());
 
 
 // Question 4
