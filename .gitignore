@@ -1,8 +1,12 @@
-# Ignore bin and obj folders in all subdirectories
+# Explicitly ignore specific paths
+Practice Final Exam/bin/
+Practice Final Exam/obj/
+
+# Generic ignores for all bin and obj folders
 **/bin/
 **/obj/
 
-# Optional: Exclude common unnecessary files
+# Optional: Other common ignores
 *.swp
 *.*~
 .DS_Store
