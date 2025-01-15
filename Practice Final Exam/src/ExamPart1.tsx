@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 
 export type Person = Student | Teacher | Staff;
 
@@ -26,49 +26,19 @@ type Staff = {
 
 // Question 1
 
-export const PersonCard = (props: Person): JSX.Element => (
-  <>
-    <div>
-      <p>
-        {props.role == "student" ? "🎓 " : props.role == "teacher" ? "🏫 " : "🏢 "}
-        {props.name}
-        {props.role == "student" ? " | Grade: " + props.grade : props.role == "teacher" ? " | Subject " + props.subject : " | Department: " + props.department}
-      </p>
-    </div>
-  </>
-)
+export const PersonCard = (props: {}): JSX.Element => (<></>)
+
 
 
 // Question 2
 
-export class PersonForm extends React.Component<{}, { name: string }> {
+export class PersonForm extends React.Component<{}, {}> {
   constructor(props: {}) {
     super(props)
-
-    this.state = {
-      name: "",
-    };
-  }
-
-  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ name: e.target.value });
-  }
-
-  handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Person registered: ${this.state.name}`);
   }
 
   render(): JSX.Element {
-    return (
-      <>
-        <form>
-          <label>Name:</label>
-          <input placeholder="Name" type="text" value={this.state.name} onChange={this.handleInputChange} />
-
-          <button onClick={this.handleSubmit}>Submit</button>
-        </form>
-      </>);
+    return (<></>)
   }
 }
 

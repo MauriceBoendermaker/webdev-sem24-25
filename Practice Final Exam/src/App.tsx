@@ -16,11 +16,6 @@ export class App extends React.Component<AppProps, AppState> {
             <p>
                 You can use this component to test your code. Place your own components inside the render of the App component.
             </p>
-            <PersonCard id="1" name="John" grade={7.5} role="student" />
-            <PersonCard id="2" name="Steve" subject="OODP, Web, Algorithms" role="teacher" />
-            <PersonCard id="3" name="Bob" department="Tech Support" role="staff" />
-            <hr />
-            <PersonForm />
         </div>
     }
 }
