@@ -20,6 +20,9 @@ export class App extends React.Component<AppProps, AppState> {
             <PersonCard id="0" name="John" grade={7.5} role="student" />
             <PersonCard id="1" name="Bob" subject="OODP, Web, Algorithms" role="teacher" />
             <PersonCard id="2" name="Steve" department="Tech Support" role="staff" />
+            <hr />
+            <PersonForm />
+            <hr />
         </div>
     }
 }

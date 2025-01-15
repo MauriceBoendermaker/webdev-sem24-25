@@ -37,16 +37,97 @@ export const PersonCard = (props: Person): JSX.Element => (
 )
 
 
+interface PersonState {
+  id: string,
+  name: string,
+  grade: number,
+  subject: string,
+  department: string,
+  role: string
+}
 
 // Question 2
 
-export class PersonForm extends React.Component<{}, {}> {
+export class PersonForm extends React.Component<{}, PersonState> {
   constructor(props: {}) {
-    super(props)
+    super(props);
+
+    this.state = {
+      id: "",
+      name: "Henk",
+      grade: 0,
+      subject: "",
+      department: "",
+      role: "student"
+    }
+  }
+
+  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ name: e.target.value });
+  }
+
+  handleInputChangeStudent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ grade: +e.target.value });
+  }
+
+  handleInputChangeTeacher = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ subject: e.target.value });
+  }
+
+  handleInputChangeStaff = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ department: e.target.value });
+  }
+
+  handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    this.setState({ role: e.target.value });
+  }
+  
+  handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault;
+    this.state.role == "student" ?
+    alert(this.state.name + " | " + this.state.grade + " | " + this.state.role) : "";
+
+    this.state.role == "teacher" ?
+    alert(this.state.name + " | " + this.state.subject + " | " + this.state.role) : "";
+
+    this.state.role == "staff" ?
+    alert(this.state.name + " | " + this.state.department + " | " + this.state.role) : "";
   }
 
   render(): JSX.Element {
-    return (<></>)
+    return (
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <label>Name: </label>
+          <input type="text" value={this.state.name} onChange={this.handleInputChange} />
+          <select value={this.state.role} onChange={this.handleDropdownChange}>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="staff">Staff</option>
+          </select>
+
+          {this.state.role == "student" ?
+            <div>
+              <label>Student grade: </label>
+              <input type="number" value={this.state.grade} onChange={this.handleInputChangeStudent} />
+            </div> : ""}
+
+          {this.state.role == "teacher" ?
+            <div>
+              <label>Teacher subjects: </label>
+              <input type="text" value={this.state.subject} onChange={this.handleInputChangeTeacher} />
+            </div> : ""}
+
+          {this.state.role == "staff" ?
+            <div>
+              <label>Staff department: </label>
+              <input type="text" value={this.state.department} onChange={this.handleInputChangeStaff} />
+            </div> : ""}
+
+            <button type="submit">Submit</button>
+        </form>
+      </>
+    )
   }
 }
 
