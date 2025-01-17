@@ -5,6 +5,7 @@ Practice Final Exam/obj/
 # Generic ignores for all bin and obj folders
 **/bin/
 **/obj/
+**/node_modules/
 
 # Optional: Other common ignores
 *.swp
