@@ -81,17 +81,17 @@ export class PersonForm extends React.Component<{}, PersonState> {
   handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({ role: e.target.value });
   }
-  
+
   handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault;
     this.state.role == "student" ?
-    alert(this.state.name + " | " + this.state.grade + " | " + this.state.role) : "";
+      alert(this.state.name + " | " + this.state.grade + " | " + this.state.role) : "";
 
     this.state.role == "teacher" ?
-    alert(this.state.name + " | " + this.state.subject + " | " + this.state.role) : "";
+      alert(this.state.name + " | " + this.state.subject + " | " + this.state.role) : "";
 
     this.state.role == "staff" ?
-    alert(this.state.name + " | " + this.state.department + " | " + this.state.role) : "";
+      alert(this.state.name + " | " + this.state.department + " | " + this.state.role) : "";
   }
 
   render(): JSX.Element {
@@ -124,7 +124,7 @@ export class PersonForm extends React.Component<{}, PersonState> {
               <input type="text" value={this.state.department} onChange={this.handleInputChangeStaff} />
             </div> : ""}
 
-            <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </>
     )
@@ -161,7 +161,7 @@ type Option<T> = Some<T> | None
 
 export const fetchPersons = async (): Promise<Option<Person[]>> => {
   const role: string = "student";
-  
+
   const optionalRole: string = role ? `?role=${role}` : "";
 
   const response = await fetch(`http://localhost:5000/api/persons${optionalRole}`);
